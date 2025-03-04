@@ -19,16 +19,16 @@ exports.findAllProduct = (req, res) => {//This is API for get all user
 
 exports.createProduct = (req, res) => { //This is API for create user
     try {
-        if (!req.body.name) {
+        if (!req.body.Reportedissues) {
             res.status(400).json({ message: "Not empty!" })
             return
         };
 
         const newProduct = {
-            name: req.body.name, //รับ Data มาจาก Frontend
-            price: req.body.price, //รับ Data มาจาก Frontend
-            stock: req.body.stock, //รับ Data มาจาก Frontend    
-            category: req.body.category
+            Reportedissues: req.body.Reportedissues, //รับ Data มาจาก Frontend
+            Notificationdate: req.body.Notificationdate, //รับ Data มาจาก Frontend
+            note: req.body.note, //รับ Data มาจาก Frontend    
+            Problematicplaces: req.body.Problematicplaces
         }
         user.create(newProduct) //เรียกใช้งาน Model ที่เราสร้างไว้ และนำไปใช้สร้าง table ใน Database
             .then(data => {
@@ -66,10 +66,10 @@ exports.updateProductById = (req, res) => {
     try {
         const id = req.params.id;
         const updateProduct = {
-            name: req.body.name, 
-            price: req.body.price, 
-            stock: req.body.stock,
-            category: req.body.category   
+            Reportedissues: req.body.Reportedissues, 
+            Notificationdate: req.body.Notificationdate, 
+            note: req.body.note,
+            Problematicplaces: req.body.Problematicplaces   
         }
         user.update(updateProduct, { where: { id: id } })
             .then(data => {

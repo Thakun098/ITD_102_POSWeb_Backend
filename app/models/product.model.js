@@ -1,24 +1,24 @@
 module.exports = (sequelize, dataType) => {
-    const Product = sequelize.define("products", {
+    const Product = sequelize.define("CityFix", {
         id: {
             type: dataType.INTEGER,
             autoIncrement: true,
             allowNull: false,
             primaryKey: true
         },
-        name: {
+        Reportedissues: {
             type: dataType.STRING,
             allowNull: false
         },
-        stock: {
-            type: dataType.INTEGER,
+        Notificationdate: {
+            type: dataType.STRING,
             allowNull: false
         },
-        price: {
-            type: dataType.INTEGER,
+        note: {
+            type: dataType.STRING,
             allowNull: false
         },
-        category: {
+        Problematicplaces: {
             type: dataType.STRING,
             allowNull: false
         },
